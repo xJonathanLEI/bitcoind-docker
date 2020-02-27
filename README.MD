@@ -1,5 +1,9 @@
 # Bitcoin Core Docker Image
 
+## Docker Hub
+
+Built images are available at [Docker Hub](https://hub.docker.com/r/xjonathanlei/bitcoind).
+
 ## Data Storage
 
 `bitcoind` stores data in `/data`
