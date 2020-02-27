@@ -29,10 +29,10 @@ Whether to maintain a full transaction index or not. Can be one of the following
 
 Defaults to `false`
 
-### RPC_USER
+### RPC_USERNAME
 
 Username for RPC, defaults to `bitcoin`
 
-### RPC_PASS
+### RPC_PASSWORD
 
 Password for RPC, defaults to `bitcoin`
