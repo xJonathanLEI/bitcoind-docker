@@ -20,7 +20,7 @@ The network for `bitcoind` to run on. Can be one of the following:
 
 Defaults to `main`
 
-### TX_INDEX
+### TXINDEX
 
 Whether to maintain a full transaction index or not. Can be one of the following:
 
