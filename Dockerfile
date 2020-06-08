@@ -7,19 +7,19 @@ RUN apt-get update
 RUN apt-get install wget -y
 
 # Download Bitcoin Core
-RUN wget https://bitcoin.org/bin/bitcoin-core-0.19.0.1/bitcoin-0.19.0.1-x86_64-linux-gnu.tar.gz
+RUN wget https://bitcoin.org/bin/bitcoin-core-0.20.0/bitcoin-0.20.0-x86_64-linux-gnu.tar.gz
 
 # TODO: verify PGP signature
 
 # Extract binary
-RUN tar xzf bitcoin-0.19.0.1-x86_64-linux-gnu.tar.gz
+RUN tar xzf bitcoin-0.20.0-x86_64-linux-gnu.tar.gz
 
 FROM ubuntu:18.04
 
 # Install binary
 WORKDIR /bitcoin
 
-COPY --from=build /build/bitcoin-0.19.0.1/bin .
+COPY --from=build /build/bitcoin-0.20.0/bin .
 RUN install -m 0755 -o root -g root -t /usr/local/bin *
 
 RUN rm *
