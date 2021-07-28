@@ -1,6 +1,6 @@
-FROM ubuntu:18.04 AS build
+FROM ubuntu:20.04 AS build
 
-ENV BITCOIN_CORE_VERSION 0.20.1
+ARG BITCOIN_CORE_VERSION
 
 WORKDIR /build
 
@@ -16,7 +16,9 @@ RUN wget https://bitcoin.org/bin/bitcoin-core-${BITCOIN_CORE_VERSION}/bitcoin-${
 # Extract binary
 RUN tar xzf bitcoin-${BITCOIN_CORE_VERSION}-x86_64-linux-gnu.tar.gz && mv bitcoin-${BITCOIN_CORE_VERSION} bitcoin
 
-FROM ubuntu:18.04
+FROM ubuntu:20.04
+
+LABEL org.opencontainers.image.source=https://github.com/xJonathanLEI/bitcoind-docker
 
 # Install binary
 WORKDIR /bitcoin
